@@ -6,11 +6,11 @@ int main(void)
 {
     string s = get_string("Before: ");
     printf("After: ");
-    for (int i = 0; i < strlens(s); i++)
+    for (int i = 0; i < strlen(s); i++)
     {
-        if (s[i]) >= 'a' && s[i] <= 'z' // checks if character is lowercase
+        if (s[i] >= 'a' && s[i] <= 'z') // checks if character is lowercase
         {
-            printf("After: %s\n", )
+            printf("%c", s[i] - 32);
         }
     }
 }
