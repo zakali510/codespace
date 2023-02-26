@@ -3,7 +3,12 @@
 
 int main(void)
 {
-    string s = "HI!";
+    string name = get_string("What is your name? ");
 
-    printf("%c\n", s[0]);
+    int n = 0;
+    while (name[n] != '\0')
+    {
+	n++;
+    }
+    printf("%i\n", n);
 }
