@@ -10,7 +10,13 @@ int main(void)
     {
         if (s[i] >= 'a' && s[i] <= 'z') // checks if character is lowercase
         {
-            printf("%c", s[i] - 32);
+            printf("%c", s[i] - 32); // converts all characters from lowercase to uppercase
         }
+        else
+        {
+            printf("%c", s[i] + 32); // if the characters aren't lowercased it'll convert to uppercase
+        }
+
     }
+    printf("\n");
 }
