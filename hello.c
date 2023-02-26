@@ -12,6 +12,7 @@ int main(void)
     {
         scores[i] = get_int("Score: ");
     }
+    printf("Average Score: %f\n", average(scores));
 }
 
 float average(int array[])
