@@ -8,6 +8,9 @@ int main(void)
     printf("After: ");
     for (int i = 0; i < strlens(s); i++)
     {
-        if (s[i])
+        if (s[i]) >= 'a' && s[i] <= 'z' // checks if character is lowercase
+        {
+            printf("After: %s\n", )
+        }
     }
 }
