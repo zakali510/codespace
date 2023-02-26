@@ -8,3 +8,4 @@ int main(void)
     int n = strlen(name);
     printf("%i\n", n);
 }
+
