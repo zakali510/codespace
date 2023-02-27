@@ -6,7 +6,7 @@ int main(void)
 {
     string s = get_string("Before: ");
     printf("After: ");
-    for (int i = 0; i < strlen(s); i++)
+    for (int i = 0; i < strlen(s); i++) // a loop that repeats for every character inputted by user
     {
         if (s[i] >= 'a' && s[i] <= 'z') // checks if character is lowercase
         {
