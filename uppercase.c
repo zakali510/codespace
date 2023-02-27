@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -8,13 +9,13 @@ int main(void)
     printf("After: ");
     for (int i = 0; i < strlen(s); i++) // a loop that repeats for every character inputted by user
     {
-        if (s[i] >= 'a' && s[i] <= 'z') // checks if character is lowercase
+        if (islower(s[i]) ) // checks if character is lowercase
         {
-            printf("%c", s[i] - 32); // converts all characters from lowercase to uppercase
+            printf("%c", toupper(s[i])); // converts all characters from lowercase to uppercase
         }
         else
         {
-            printf("%c", s[i] + 32); // if the characters aren't lowercased it'll convert to uppercase
+            printf("%c", isupper(s[i])); // if the characters aren't lowercased it'll convert to uppercase
         }
 
     }
