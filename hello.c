@@ -6,7 +6,7 @@ const int N = 3;
 float average(int array[]);
 
 int main(void)
-{ // this prints out Score: three times
+{ // this prints out an array[] of Score: three times
     int scores[N];
     for (int i = 0; i < N; i++)
     {
