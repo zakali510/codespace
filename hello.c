@@ -18,7 +18,7 @@ int main(void)
 float average(int array[]) // this gets the average of the score,
                            // and divides it by three
 {
-    int sum = 0;
+    int sum = 0; // sets sum at 0 and retrieves the average of all three inputs
     for (int i = 0; i < N; i++)
     {
         sum+=array[i];
