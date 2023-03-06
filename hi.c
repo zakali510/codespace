@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
-    string name = get_string("What is your name? ");
-    int n = strlen(name);
-    printf("%i\n", n);
+    string s = get_string("Before: ");
+    for (int i = 0; i < strlen(s); i++)
+    {
+        printf("%c", toupper(s[i]));
+    }
+    printf("\n");
 }
 
