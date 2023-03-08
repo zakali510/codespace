@@ -3,14 +3,14 @@
 
 const int N = 3;
 
-float average(int array[]);
+float average(int array[]); // to take an array of integers
 
 int main(void)
 { // this prints out an array[] of Score: three times
     int scores[N];
     for (int i = 0; i < N; i++)
     {
-        scores[i] = get_int("Score: ");
+        scores[i] = get_int("Score: "); // i repeats 3 times because const int N = 3
     }
     printf("Average Score: %f\n", average(scores));
 }
