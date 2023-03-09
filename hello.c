@@ -7,12 +7,12 @@ float average(int array[]); // to take an array of integers
 
 int main(void)
 { // this prints out an array[] of Score: three times
-    int scores[N];
+    int scores[N]; // const N = 3, repeats 3 times ((scores is name of array))
     for (int i = 0; i < N; i++)
     {
         scores[i] = get_int("Score: "); // i repeats 3 times because const int N = 3
     }
-    printf("Average Score: %f\n", average(scores));
+    printf("Average Score: %f\n", average(scores)); // average (scores) scores is array
 }
 
 float average(int array[]) // this gets the average of the score,
