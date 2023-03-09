@@ -12,4 +12,5 @@ int main(void)
     {
         printf("%c", s[i] - 32);
     }
+    printf("\n");
 }
