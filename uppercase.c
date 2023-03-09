@@ -6,9 +6,9 @@
 int main(void)
 {
     string s = get_string("Before ");
-    for (int i = 0; i < strlen(s); i++)
+    for (int i = 0; i < strlens(s); i++)
+    if (s[i] <= 'a' && >= 'z')
     {
-        printf("%c", tolower(s[i]));
+        printf("c", s[i] toupper);
     }
-    printf("\n");
 }
