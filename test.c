@@ -10,7 +10,7 @@ int main(int argc, string argv[])
     }
 else
     {
-        printf("hello %s\n"m, argv[1]);
+        printf("hello %s\n", argv[1]);
         return 0;
     }
 }
