@@ -1,4 +1,4 @@
-x = input(int("First number " ))
-y = input(int("Second number " ))
+x = input("First number ")
+y = input("Second number ")
 
-print (x + y)
+print (int(x) + int(y))
