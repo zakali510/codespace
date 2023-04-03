@@ -12,8 +12,12 @@ int main(void)
     {
         scores[i] = get_int("Score: "); // i repeats 3 times because const int N = 3
     }
+    if scores[i] != ()
     printf("Average Score: %f\n", average(scores)); // average (scores) scores is array
+
 }
+
+
 
 float average(int array[]) // this gets the average of the score,
                            // and divides it by three
