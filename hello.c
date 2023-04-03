@@ -12,7 +12,7 @@ int main(void)
     {
         scores[i] = get_int("Score: "); // i repeats 3 times because const int N = 3
     }
-    if scores[i] != ()
+    if (scores[i] )
     printf("Average Score: %f\n", average(scores)); // average (scores) scores is array
 
 }
