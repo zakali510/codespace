@@ -3,7 +3,7 @@
 
 const int N = 3;
 
-float average(int array[]); // to take an array of integers
+float average(int array[]); // creates a function named average that takes an array of integers
 
 int main(void)
 { // this prints out an array[] of Score: three times
