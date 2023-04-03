@@ -12,7 +12,7 @@ int main(void)
     for (int i = 0; i < N; i++)
     {
         scores[i] = get_int("Score: ");
-        while (!isdigit(getchar()))
+        while (!isdigit(getchar())
         {
             printf("Invalid input. Please enter a digit.\n");
             return 1;
