@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 
 const int N = 3;
 
@@ -10,9 +11,12 @@ int main(void)
     int scores[N]; // const N = 3, repeats 3 times ((scores is name of array)) LOCAL DECLARATION
     for (int i = 0; i < N; i++)
     {
-        scores[i] = get_int("Score: "); // i repeats 3 times because const int N = 3
+        scores[N] = get_int("Score: "); // i repeats 3 times because const int N = 3
     }
-    if (scores[i] )
+    if (scores[N] != isdigit())
+    {
+        do int scores[N];
+    }
     printf("Average Score: %f\n", average(scores)); // average (scores) scores is array
 
 }
