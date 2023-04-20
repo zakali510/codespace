@@ -5,4 +5,4 @@ students = [
 ]
 
 for student in students:
-    print(students["1"], students["Grade"], sep = " is in ")
+    print(students[1], students[1], sep = " is in ")
