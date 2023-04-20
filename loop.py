@@ -1,8 +1,4 @@
-def main():
-    print_column(3)
+students = ["Name": "Zak" "Grade": "11th Grade" "Age": "16"]
 
-def print_column(h): # creates a function
-    for _ in range(h):
-        print("#")
-
-main() # calls main
+for student in students:
+    print(")
