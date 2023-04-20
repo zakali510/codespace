@@ -5,4 +5,4 @@ students = [
 ]
 
 for student in students:
-    print(students["Name"], students["Grade"], students["Age"])
+    print(student["Name"], student["Grade"], student["Age"])
