@@ -5,4 +5,5 @@ students = [
 ]
 
 for i in students:
-    print(i["Name"], i["Grade"], i["Age"])
+    print(i["Name"], i["Grade"], i["Age"], sep = ", ")
+
