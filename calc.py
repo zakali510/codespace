@@ -13,5 +13,6 @@ def is_even(n):
     return False
 main()
 
-while x != 
+if x != int():
+  main()
 
