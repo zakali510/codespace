@@ -1,9 +1,12 @@
 def main():
+    try:
   x = int(input("What's x: "))
   if is_even(x):
     print("Even")
   else:
     print("Odd")
+except ValueError:
+  print("Please input a valid input")
 
 
 def is_even(n):
@@ -12,7 +15,3 @@ def is_even(n):
   else:
     return False
 main()
-
-if x != int():
-  main()
-
