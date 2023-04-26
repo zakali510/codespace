@@ -7,3 +7,7 @@ def main():
     print("Please input an integer")
     main()
 
+
+
+main()
+
