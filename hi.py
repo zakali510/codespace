@@ -1,6 +1,6 @@
 def main():
    try:
-    print(int(input("What's x:")))
+    x = int(input("What is x: "))
     print(f"x is {x}")
 
    except ValueError:
