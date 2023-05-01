@@ -12,8 +12,5 @@ def get_int():
         except ValueError:
             print("Please input an integer")
         else:
-            print(f"x is {x}")
-            break
-    return x
-
+            return x
 main()
