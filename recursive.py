@@ -1,4 +1,4 @@
-def even_numbers():
+
     def mult3(n):
         if n == 0:
             return 2
@@ -8,4 +8,3 @@ def even_numbers():
     for i in range(0,10):
         print(mult3(i))
 
-even_numbers()
