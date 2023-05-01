@@ -1,9 +1,8 @@
-
-def factorial(n):
-    print("factorial has been called with n = " + str(n))
-    if n == 1:
-        return 1
+def mult3(n):
+    if n == 0:
+        return 2
     else:
-        res = n * factorial(n-1)
-        print("intermediate result for ", n, " * factorial(" ,n-1, "): ",res)
-        return res
+        return mult3(n-1) + 3
+
+for i in range(1,10):
+        print(mult3(i))
