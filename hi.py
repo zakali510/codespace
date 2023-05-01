@@ -9,8 +9,8 @@ def get_int():
     while True:
         try:
             x = int(input("What is x? "))
+            return x
         except ValueError:
             print("Please input an integer")
-        else:
-            return x
+
 main()
