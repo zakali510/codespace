@@ -11,6 +11,6 @@ def get_int():
             x = int(input("What is x? "))
             return x
         except ValueError:
-            print("Please input an integer")
+            pass
 
 main()
