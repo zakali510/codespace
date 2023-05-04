@@ -1,3 +1,3 @@
-xy = int(input("Input a fraction: "))
-rounded = xy * 100
-print(rounded)
+x = int(input("What's x: ))
+y = int(input("What's y: ))
+
