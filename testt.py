@@ -5,4 +5,5 @@ import sys
 
 response = requests.get("https://www.google.com/maps")
 
-print(response.json())
+o = response.json()
+print(o)
