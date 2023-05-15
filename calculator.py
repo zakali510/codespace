@@ -1,6 +1,8 @@
 
 def main():
     x = int(input("x: "))
+except ValueError:
+    main()
     print("x squared is", square(x))
 
 def square(n):
@@ -13,4 +15,3 @@ if __name__ == "__main__":
 
 
 
-    
