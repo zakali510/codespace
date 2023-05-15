@@ -1,8 +1,9 @@
 
 def main():
-    x = int(input("x: "))
-except ValueError:
-    main()
+    try:
+        x = int(input("x: "))
+    except ValueError:
+        main()
     print("x squared is", square(x))
 
 def square(n):
