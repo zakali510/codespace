@@ -4,15 +4,11 @@ def main():
     test_square()
 
 def test_square():
-
-    try:
-        assert square(2) == 4
-    except AssertionError:
-            print("2 squared isn't 4")
-    try:
-        assert square(3) == 9
-    except AssertionError:
-            print("3 squared isn't 9")
+    for number in range(10):
+        try:
+            assert square(number) == number**2
+        except AssertionError:
+            print(f"{number} squared is not {number**2}")
 
 if __name__ == "__main__":
     main()
