@@ -1,48 +1,39 @@
-import string
-from itertools import permutations
-from time import time
-from scipy.special import perm
+import hashlib
+from urllib.request import urlopen
 
-def bruteforce(password, max_nchar=8, possible_char=None, lazy=False):
-    """Brute-force string
-    Parameters
-    ----------
-    password : hello
-        hello123
-    max_nchar : 8
-        8
-    possible_char : he
-        List of possible characters (e.g. 'abcdefghijklmnop...')
-    Return
-    ------
-    bruteforce_password : hello
-        Brute-forced password
-    """
-    if possible_char is None:
-        # All digits + upper/lower case ASCII letters + punctuation
-        # Same as possible_char = string.printable[:-5]
-        possible_char = string.digits + string.ascii_letters + \
-                        string.punctuation
+def readwordlist(url):
+    try:
+        wordlistfile = urlopen(url).read()
+    except Exception as e:
+        print("Hey there was some error while reading the wordlist, error:", e)
+        exit()
+    return wordlistfile
 
-    nperm = sum([perm(len(possible_char), l) for l in
-                                            range(1, max_nchar+1)])
-    print('Max password length: %d' % max_nchar)
-    print('Number of possible char: %d' % len(possible_char))
-    print('Computing %.1e possible combinations' % nperm)
 
-    if lazy:
-        return None
+def hash(wordlistpassword):
+    result = hashlib.sha1(wordlistpassword.encode())
+    return result.hexdigest()
 
-    for l in range(1, max_nchar+1):
-        print("%d char" % l)
-        generator = permutations(possible_char, int(l))
-        for p in generator:
-            if ''.join(p) == password:
-                print('Password:', ''.join(p))
-                return ''.join(p)
 
-# EXAMPLE
-start = time()
-bruteforce('PasS1')
-end = time()
-print('Total time: %.2f seconds' % (end - start))
+def bruteforce(guesspasswordlist, actual_password_hash):
+    for guess_password in guesspasswordlist:
+        if hash(guess_password) == actual_password_hash:
+            print("Hey! your password is:", guess_password,
+                  "\n please change this, it was really easy to guess it (:")
+            # If the password is found then it will terminate the script here
+            exit()
+
+############# append the below code ################
+
+url = 'https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Real-Passwords/Top12Thousand-probable-v2.txt'
+actual_password = 'henry'
+actual_password_hash = hash(actual_password)
+
+wordlist = readwordlist(url).decode('UTF-8')
+guesspasswordlist = wordlist.split('\n')
+ 
+# Running the Brute Force attack
+bruteforce(guesspasswordlist, actual_password_hash)
+
+# It would be executed if your password was not there in the wordlist
+print("Hey! I couldn't guess this password, it was not in my wordlist, this is good news! you win (: ")
