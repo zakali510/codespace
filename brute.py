@@ -7,15 +7,15 @@ def bruteforce(password, max_nchar=8, possible_char=None, lazy=False):
     """Brute-force string
     Parameters
     ----------
-    password : string
-        Actual password
-    max_nchar : int
-        Maximum number of characters in passwords
-    possible_char : string
+    password : hello
+        hello123
+    max_nchar : 8
+        8
+    possible_char : he
         List of possible characters (e.g. 'abcdefghijklmnop...')
     Return
     ------
-    bruteforce_password : string
+    bruteforce_password : hello
         Brute-forced password
     """
     if possible_char is None:
