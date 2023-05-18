@@ -43,6 +43,6 @@ def bruteforce(password, max_nchar=8, possible_char=None, lazy=False):
 
 # EXAMPLE
 start = time()
-bruteforce('helllooo')
+bruteforce('PasS1')
 end = time()
 print('Total time: %.2f seconds' % (end - start))
