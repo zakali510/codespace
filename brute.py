@@ -1,80 +1,48 @@
-
 import string
-from itertools import product
+from itertools import permutations
 from time import time
-from numpy import loadtxt
+from scipy.special import perm
 
-
-def product_loop(password, generator):
-    for p in generator:
-        if ''.join(p) == password:
-            print('\nPassword:', ''.join(p))
-            return ''.join(p)
-    return False
-
-
-def bruteforce(password, max_nchar=8):
-    """Password brute-force algorithm.
+def bruteforce(password, max_nchar=8, possible_char=None, lazy=False):
+    """Brute-force string
     Parameters
     ----------
     password : string
-        To-be-found password.
+        Actual password
     max_nchar : int
-        Maximum number of characters of password.
+        Maximum number of characters in passwords
+    possible_char : string
+        List of possible characters (e.g. 'abcdefghijklmnop...')
     Return
     ------
     bruteforce_password : string
         Brute-forced password
     """
-    print('1) Comparing with most common passwords / first names')
-    common_pass = loadtxt('probable-v2-top12000.txt', dtype=str)
-    common_names = loadtxt('middle-names.txt', dtype=str)
-    cp = [c for c in common_pass if c == password]
-    cn = [c for c in common_names if c == password]
-    cnl = [c.lower() for c in common_names if c.lower() == password]
+    if possible_char is None:
+        # All digits + upper/lower case ASCII letters + punctuation
+        # Same as possible_char = string.printable[:-5]
+        possible_char = string.digits + string.ascii_letters + \
+                        string.punctuation
 
-    if len(cp) == 1:
-        print('\nPassword:', cp)
-        return cp
-    if len(cn) == 1:
-        print('\nPassword:', cn)
-        return cn
-    if len(cnl) == 1:
-        print('\nPassword:', cnl)
-        return cnl
+    nperm = sum([perm(len(possible_char), l) for l in
+                                            range(1, max_nchar+1)])
+    print('Max password length: %d' % max_nchar)
+    print('Number of possible char: %d' % len(possible_char))
+    print('Computing %.1e possible combinations' % nperm)
 
-    print('2) Digits cartesian product')
-    for l in range(1, 9):
-        generator = product(string.digits, repeat=int(l))
-        print("\t..%d digit" % l)
-        p = product_loop(password, generator)
-        if p is not False:
-            return p
+    if lazy:
+        return None
 
-    print('3) Digits + ASCII lowercase')
-    for l in range(1, max_nchar + 1):
-        print("\t..%d char" % l)
-        generator = product(string.digits + string.ascii_lowercase,
-                            repeat=int(l))
-        p = product_loop(password, generator)
-        if p is not False:
-            return p
-
-    print('4) Digits + ASCII lower / upper + punctuation')
-    # If it fails, we start brute-forcing the 'hard' way
-    # Same as possible_char = string.printable[:-5]
-    all_char = string.digits + string.ascii_letters + string.punctuation
-
-    for l in range(1, max_nchar + 1):
-        print("\t..%d char" % l)
-        generator = product(all_char, repeat=int(l))
-        p = product_loop(password, generator)
-        if p is not False:
-            return p
-
+    for l in range(1, max_nchar+1):
+        print("%d char" % l)
+        generator = permutations(possible_char, int(l))
+        for p in generator:
+            if ''.join(p) == password:
+                print('Password:', ''.join(p))
+                return ''.join(p)
 
 # EXAMPLE
 start = time()
-bruteforce('sunshine') # Try with '123456' or '751345' or 'test2018'
+bruteforce('PasS1')
 end = time()
 print('Total time: %.2f seconds' % (end - start))
